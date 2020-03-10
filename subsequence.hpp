@@ -55,7 +55,17 @@ sequence random_sequence(size_t size, unsigned seed, int max_element) {
 bool is_nonincreasing(const sequence& A) {
   //TO DO: Write code for this function, including rewriting the return
   // statement, and then delete these comments.
-  return false;
+  sequence B = A;
+
+  // checks adjacent value if the next one is greater than the current
+  // if not then the sequence is nonincreasing and return false
+  // might need to check
+  for (int i = 0; i < B.size()-1; i++){
+    if (B[i] < B[i+1]){
+      return false;
+    }
+  }
+  return true;
   }
 
 sequence longest_nonincreasing_end_to_beginning(const sequence& A) {
@@ -126,6 +136,9 @@ sequence longest_nonincreasing_powerset(const sequence& A) {
     // larger than the size of the current best if both 
     // conditions are satisfied, then stored candidate 
     // in best
+    if (is_nonincreasing(candidate) && candidate.size() > best.size()){ // working
+      best = candidate;
+    }
   }
   return best;
 }
