@@ -53,8 +53,6 @@ sequence random_sequence(size_t size, unsigned seed, int max_element) {
 }
 
 bool is_nonincreasing(const sequence& A) {
-  //TO DO: Write code for this function, including rewriting the return
-  // statement, and then delete these comments.
 
   // checks adjacent value if the next one is greater than the current
   // if not then the sequence is nonincreasing and return false
@@ -79,11 +77,9 @@ sequence longest_nonincreasing_end_to_beginning(const sequence& A) {
   // the loop condition is i >= 0
   for (signed int i = n-2;  i>= 0; i--) {
     for (size_t j = i+1; j < n ; j++) {
-      // TODO: write the statements that compute the value of
-      // H[i] based on conditions that involve A[i], A[j] and H[j]
 
       // check if its increasing
-      if (A[i] >= A[j]){ // working
+      if (A[i] >= A[j]){ 
         // if the amount of elements prior is greater than
         // the current than we set it to the prior + 1
         if(H[i] <= H[j]){
@@ -108,11 +104,8 @@ sequence longest_nonincreasing_end_to_beginning(const sequence& A) {
   size_t index = max-1, j = 0;
   for (size_t i = 0; i < n; ++i) {
     if (H[i] == index) {
-      // TODO: write the statements to add A[i] to the
-      // sequence R by storing it into R[j], decrement
-      // index and increment j
 
-      R[j] = A[i]; // working
+      R[j] = A[i]; 
       index--;
       j++;
 
@@ -145,12 +138,8 @@ sequence longest_nonincreasing_powerset(const sequence& A) {
     for (size_t i = 1; i <= k; ++i) {
       candidate.push_back(A[stack[i]-1]);
     }
-    // TODO: write the if statement to test whether candidate
-    // determines a non-increasing sequence AND has a size
-    // larger than the size of the current best if both 
-    // conditions are satisfied, then stored candidate 
-    // in best
-    if (is_nonincreasing(candidate) && candidate.size() > best.size()){ // working
+
+    if (is_nonincreasing(candidate) && candidate.size() > best.size()){ 
       best = candidate;
     }
   }
