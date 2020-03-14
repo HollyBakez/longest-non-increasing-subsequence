@@ -24,12 +24,12 @@ void print_bar() {
 
 int main() {
 
-  const size_t n = 20;
+  const size_t n = 20; // orginal n = 20, chaning n to new for testing
 
   assert(n > 0);
 
   // Use a hardcoded seed for reproducibility between runs.
-  auto input = random_sequence(n, 0, 1000);
+  auto input = random_sequence(n, 0, 1000); 
 
   Timer timer;
   double elapsed;
@@ -60,3 +60,4 @@ int main() {
 
   return 0;
 }
+
